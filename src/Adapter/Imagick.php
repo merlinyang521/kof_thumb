@@ -408,9 +408,9 @@ class Imagick extends AbstractAdapter
     /**
      * @inheritdoc
      */
-    public function save($fileName)
+    public function save($fileName, $format = null)
     {
-        $format = strtoupper(pathinfo($fileName, \PATHINFO_EXTENSION));
+        $format = ($format !== null) ? strtoupper($format) : $this->format;
 
         if (!in_array($format, $this->allowFormats)) {
             throw new InvalidArgumentException ('Invalid format type specified in save function: ' . $format);

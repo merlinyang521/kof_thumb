@@ -155,9 +155,10 @@ interface AdapterInterface
      * @throws RuntimeException
      * @throws InvalidArgumentException
      * @param string $fileName The full path and filename of the image to save, must be one of [GIF,JPG,PNG,WEBP]
+     * @param string $format The format to save the image in (optional, must be one of [GIF,JPG,PNG,WEBP]
      * @return self
      */
-    public function save($fileName);
+    public function save($fileName, $format = null);
 
     /**
      * Returns the Working Image as a String
